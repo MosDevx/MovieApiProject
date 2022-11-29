@@ -32,6 +32,11 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-family: 'Magra', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  background-image:url(/src/assets/so-white.png);
+
+
 }
 
 /*
@@ -76,4 +81,38 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+
+.header{
+	display:flex;
+	justify-content:space-around;
+  align-items: center;
+  background-color: #204ecf;
+  padding: 10px;
+}
+
+.logo-div{
+  display:flex;
+  align-items: center;
+  color:white;
+  font-size: 30px;
+
+}
+
+.movie-icon{
+  width:100px;
+}
+
+.nav-link{
+  width:350px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+
 }
