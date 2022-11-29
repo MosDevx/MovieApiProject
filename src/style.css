@@ -64,7 +64,6 @@ select {
 /*
   8. Avoid text overflows
 */
-p,
 h1,
 h2,
 h3,
@@ -73,6 +72,9 @@ h5,
 h6 {
   overflow-wrap: break-word;
   font-family: 'Metamorphous', cursive;
+}
+p {
+  overflow-wrap: break-word;
 }
 
 /*
@@ -115,4 +117,21 @@ a{
   text-decoration: none;
   color: white;
 
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+font-weight: normal;}
+
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #204ecf;
+  color: white;
 }
