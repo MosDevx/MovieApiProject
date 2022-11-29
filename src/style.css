@@ -34,9 +34,7 @@ body {
   font-family: 'Magra', sans-serif;
   font-size: 18px;
   letter-spacing: 1px;
-  background-image:url(/src/assets/so-white.png);
-
-
+  background-image: url(/src/assets/so-white.png);
 }
 
 /*
@@ -73,6 +71,7 @@ h6 {
   overflow-wrap: break-word;
   font-family: 'Metamorphous', cursive;
 }
+
 p {
   overflow-wrap: break-word;
 }
@@ -85,38 +84,36 @@ p {
   isolation: isolate;
 }
 
-.header{
-	display:flex;
-	justify-content:space-around;
+.header {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
   background-color: #204ecf;
   padding: 10px;
 }
 
-.logo-div{
-  display:flex;
+.logo-div {
+  display: flex;
   align-items: center;
-  color:white;
+  color: white;
   font-size: 30px;
-
 }
 
-.movie-icon{
-  width:100px;
+.movie-icon {
+  width: 100px;
 }
 
-.nav-link{
-  width:350px;
+.nav-link {
+  width: 350px;
   display: flex;
   justify-content: space-between;
   padding-left: 30px;
   padding-right: 30px;
 }
 
-a{
+a {
   text-decoration: none;
   color: white;
-
 }
 
 .footer {
@@ -124,7 +121,8 @@ a{
   justify-content: space-around;
   align-items: center;
   padding: 10px;
-font-weight: normal;}
+  font-weight: normal;
+}
 
 footer {
   width: 100%;
