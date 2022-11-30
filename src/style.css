@@ -35,6 +35,7 @@ body {
   font-size: 18px;
   letter-spacing: 1px;
   background-image: url(/src/assets/so-white.png);
+  padding-bottom: 60px;
 }
 
 /*
@@ -124,6 +125,18 @@ a {
   font-weight: normal;
 }
 
+.footer-logo-div {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 25px;
+}
+
+.footer-icon {
+  width: 70px;
+  height: auto;
+}
+
 footer {
   width: 100%;
   position: fixed;
@@ -132,4 +145,5 @@ footer {
   flex-direction: column;
   background-color: #204ecf;
   color: white;
+  height:60px;
 }
