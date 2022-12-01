@@ -3,20 +3,16 @@ import './style.css';
 
 import popupWindow from './modules/commentsPopupWindow.js';
 
+import getMovies from './modules/getMovies.js';
+
 const popupContainer = document.getElementById('popup-container');
 
-const data = {
-  imgSrc: '/src/assets/logo-pop.png',
-  imgAlt: 'Movie name here',
-  movieName: 'The Princess Bride',
-  season: '1',
-  episode: '2',
-  description: 'Hello,My Name is Inigo Montoya, You killed my father,Prepare to die',
-};
+const movieArray = await getMovies();
+
 function closeModal() {
   popupContainer.innerHTML = '';
 }
 
-const popup = popupWindow(data, closeModal);
+const popup = popupWindow(movieArray[2], closeModal);
 
 popupContainer.append(popup);

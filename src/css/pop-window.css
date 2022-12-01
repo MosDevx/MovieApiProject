@@ -1,11 +1,9 @@
 
-
-
 /* Styling for the popup window */
 
-.popup-window1{
-	display:none;
-	visibility: hidden;
+.popup-window1 {
+  display: none;
+  visibility: hidden;
 }
 
 .button-default {
@@ -100,9 +98,8 @@
   height: 190px;
 }
 
-.comment-button{
-	margin-bottom: 10px;
-
+.comment-button {
+  margin-bottom: 10px;
 }
 
 /* CSS */
@@ -121,20 +118,21 @@
   touch-action: manipulation;
 }
 
-.button-85:before {
+.button-85::before {
   content: "";
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000
-  );
+  background:
+    linear-gradient(
+      45deg,
+      #f00,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #f00
+    );
   position: absolute;
   top: -2px;
   left: -2px;
@@ -153,15 +151,17 @@
   0% {
     background-position: 0 0;
   }
+
   50% {
     background-position: 400% 0;
   }
+
   100% {
     background-position: 0 0;
   }
 }
 
-.button-85:after {
+.button-85::after {
   z-index: -1;
   content: "";
   position: absolute;

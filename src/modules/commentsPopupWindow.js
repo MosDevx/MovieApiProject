@@ -1,7 +1,11 @@
-const getComments = (comments) => {
+import countComments from './commentCounter.js';
+
+import validateComment from './validateComment.js';
+
+const createLiComments = (comments) => {
   const fragment = document.createDocumentFragment();
 
-  comments.forEach((comment) => {
+  comments.reverse().forEach((comment) => {
     const li = document.createElement('li');
     li.textContent = comment;
     fragment.append(li);
@@ -10,10 +14,16 @@ const getComments = (comments) => {
   return fragment;
 };
 
-const fakeComments = ['Good times', 'Awesome Show', 'Me likey'];
+const createOneLiComment = (comment) => {
+  const li = document.createElement('li');
+  li.textContent = comment;
+  return li;
+};
+
+const fakeComments = ['Good times', 'Awesome Show', 'Me likey', 'mucho gracis'];
 
 const popupWindow = ({
-  imgSrc, imgAlt, movieName, season, episode, description,
+  imgMediumUrl, imgAlt, name, season, episode, summary,
 }, closePopup) => {
   const mainDiv = document.createElement('div');
   mainDiv.classList.add('popup-window');
@@ -37,17 +47,17 @@ const popupWindow = ({
   const imgDiv = document.createElement('div');
   const imgElement = document.createElement('img');
   imgElement.classList.add('popup-image');
-  imgElement.setAttribute('src', imgSrc);
+  imgElement.setAttribute('src', imgMediumUrl);
   imgElement.setAttribute('alt', imgAlt);
   imgDiv.appendChild(imgElement);
   // end image div
 
-  // start show description div
+  // start show summary div
   const titleDiv = document.createElement('div');
   titleDiv.classList.add('title-div');
 
   const movieHeading = document.createElement('h3');
-  movieHeading.textContent = movieName;
+  movieHeading.textContent = name;
 
   const detailsDiv = document.createElement('div');
   detailsDiv.classList.add('details-div');
@@ -60,10 +70,10 @@ const popupWindow = ({
 
   detailsDiv.append(seasonSpan, episodeSpan);
 
-  const descriptionSpan = document.createElement('span');
-  descriptionSpan.textContent = description;
+  const summarySpan = document.createElement('span');
+  summarySpan.innerHTML = summary;
 
-  titleDiv.append(movieHeading, detailsDiv, descriptionSpan);
+  titleDiv.append(movieHeading, detailsDiv, summarySpan);
   // end show descritption div
 
   // start display comments div
@@ -77,8 +87,6 @@ const popupWindow = ({
 
   const commentCountSpan = document.createElement('span');
   commentCountSpan.setAttribute('id', 'comment-count');
-  const commentCount = 10;
-  commentCountSpan.textContent = `(${commentCount})`;
 
   commentsHeading.append(commentCountSpan);
   commentTitleDiv.append(commentsHeading);
@@ -86,10 +94,16 @@ const popupWindow = ({
   const commentsUL = document.createElement('ul');
   commentsUL.classList.add('comments-ul');
 
-  //* getComments will return a fragment containing list items of commenst
-  const comments = getComments(fakeComments);
+  //* createLiComments will return a fragment containing list items of commenst
+  const comments = createLiComments(fakeComments);
   commentsUL.append(comments);
 
+  const updateCommentCount = () => {
+    const commentCount = countComments(commentsUL);
+    commentCountSpan.textContent = `(${commentCount})`;
+  };
+
+  updateCommentCount();
   displayCommentsDiv.append(commentTitleDiv, commentsUL);
   // end display comments div
 
@@ -116,6 +130,8 @@ const popupWindow = ({
   commentTextArea.setAttribute('rows', '3');
 
   const commentButton = document.createElement('button');
+  // commentButton.setAttribute('type','submit')
+  // commentButton.setAttribute('value','Comment')
   commentButton.classList.add('comment-button', 'button-85');
   commentButton.innerHTML = 'Comment';
 
@@ -123,6 +139,20 @@ const popupWindow = ({
 
   newCommentsDiv.append(newCommentHeading, commentsForm);
   // end new Comments div
+
+  // commentsForm attach EventListener
+  commentsForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log('form submitted');
+    const name = e.target.elements[0].value;
+    const comment = e.target.elements[1].value;
+    e.target.elements[0].value = '';
+    e.target.elements[1].value = '';
+    const data = validateComment(name, comment);
+    const liComment = createOneLiComment(data);
+    commentsUL.prepend(liComment);
+    updateCommentCount();
+  });
 
   mainDiv.append(closeButton, imgDiv, titleDiv, displayCommentsDiv, newCommentsDiv);
   return mainDiv;
