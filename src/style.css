@@ -1,4 +1,4 @@
-
+@import url('./css/pop-window.css');
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -145,52 +145,7 @@ footer {
   flex-direction: column;
   background-color: #204ecf;
   color: white;
-  height:60px;
+  height: 60px;
 }
 
 
-/* Styling for the popup window */
-
-.popup-window{
-
-  display:flex;
-  flex-direction: column;
-  width:70%;
-  border:5px solid black;
-  align-items: center;
-  z-index: 10;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
-  text-align: center;
-  height:100%;
-  background-image: url('/src/assets/dust_scratches.png');
-
-}
-
-.popup-image{
-  width:auto;
-  height:250px;
-}
-
-.details-div{
-  display: flex;
-  justify-content: space-between;
-}
-
-.comment-title{
-  display:flex;
- justify-content: center;
-}
-
-.comments-ul{
-  list-style-type: none;
-  text-align: left;
-}
-
-.comments-form{
-  display: flex;
-  flex-direction: column;
-}

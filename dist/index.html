@@ -55,26 +55,39 @@
 		</header>
 
 		<section>
+			
+			<!-- container for holding popup -->
 
-			<div class="popup-window">
+			<div id="popup-container">
+
+			</div>
+
+
+
+
+			<div class="popup-window1">
+				<button class="button-default close-button"><i class="fa-solid fa-xmark close-icon-fa"></i></button>
 				<div >
 					<!-- imagegoes here -->
 					<img class="popup-image" src="/src/assets/logo-pop.png" alt=""/>
 				</div>
 			
-				<div>
+				<div class="title-div"d>
 					<!-- description -->
 					<h3>Title Goes here</h3>
 					<div class="details-div"> <span>Season: 4 </span> <span>Episode: 1</span> </div>
 					<span>Short Description goes here a bit long <br> Maybe two lines will be enough</span>
 				</div>
 		
-				<div>
+				<div class="display-comments">
 					<!-- comments here -->
-					<div class="comment-title"><h4>Comments  <span>(5)</span></h4></div>
+					<div class="comment-title"><h4>Comments  <span id="comment-count">(5)</span></h4></div>
 					<ul class="comments-ul">
 						<li> 05/05/05 Aster : I like it a lot !!</li>
-						<li> 05/05/05 Moses : Best show ever!!</li>
+						<li> 05/05/05 Aster : I like it a lot !!</li>
+						<li> 05/05/05 Aster : I like it a lot !!</li>
+						<li> 05/05/05 Moses : Best show evesasaasasr!!</li>
+					
 					
 					</ul>
 				</div>
@@ -84,9 +97,9 @@
 					<h4>Add A Comment</h4>
 	
 					<form action="" class="comments-form">
-						<input type="text"/>
-						<input type="text"/>
-						<input type="submit" value="submit"/>
+						<input type="text" required placeholder="Your Name"/>
+						<textarea name=""  required id="" cols="25" rows="3" placeholder="Your Comments"></textarea>
+						<button class="comment-button button-85">Comment</button>
 					</form>
 				
 				</div>
