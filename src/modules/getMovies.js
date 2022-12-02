@@ -38,13 +38,3 @@ async function getMovies() {
 
 export default getMovies;
 
-// (async () => {
-//   try {
-//     const movieList = await getMovies();
-//     parseMovieData(movieList);
-//   } catch (err) {
-//     // pass
-//   }
-// }
-
-// )();

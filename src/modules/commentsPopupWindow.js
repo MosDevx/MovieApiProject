@@ -102,8 +102,7 @@ const popupWindow = ({
   commentsUL.classList.add('comments-ul');
 
   //* createLiComments will return a fragment containing list items of commenst
-  // let commentsArray = []
-  // commentsArray = getComments(showId);
+
   const comments = createLiComments(commentsArray);
   commentsUL.append(comments);
 
