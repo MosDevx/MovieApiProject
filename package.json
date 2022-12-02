@@ -37,9 +37,7 @@
     "test": "jest --env=jsdom"
   },
   "dependencies": {
-    "dotenv-webpack": "^8.0.1",
     "jest": "^29.3.1",
-    "jest-environment-jsdom": "^29.3.1",
-    "node-vibrant": "^3.1.6"
+    "jest-environment-jsdom": "^29.3.1"
   }
 }
