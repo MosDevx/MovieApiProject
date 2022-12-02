@@ -3,6 +3,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+// const Dotenv = require('dotenv-webpack')
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -33,6 +34,12 @@ const config = {
       {
         test: /\.(js|jsx)$/i,
         loader: 'babel-loader',
+      },
+
+      {
+        test: /\.worker.js$/,
+        loader: 'worker-loader',
+        options: { /* ... */ },
       },
       {
         test: /\.worker.js$/,
