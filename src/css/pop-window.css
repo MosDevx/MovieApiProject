@@ -32,6 +32,7 @@
   flex-direction: column;
   width: 70%;
   border: 5px solid black;
+
   /* justify-content:space-evenly; */
   align-items: center;
   z-index: 10;
@@ -43,12 +44,12 @@
   transform: translate(-50%, -50%);
   text-align: center;
   height: 700px;
+
   /* height:max-content; */
   background-image: url('/src/assets/dust_scratches.png');
-
-  overflow-y:auto;
-  padding-top:20px;
-  padding-bottom:20px;
+  overflow-y: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .popup-image {
@@ -60,20 +61,21 @@
   margin: 10px;
   width: 350px;
 }
-.summary-div{
-  padding-right:40px;
-  padding-left:40px;
-  text-align:justify;
 
+.summary-div {
+  padding-right: 40px;
+  padding-left: 40px;
+  text-align: justify;
 }
-.display-comments {
 
+.display-comments {
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: left;
   overflow-x: visible;
   width: 450px;
   padding-left: 5px;
+
   /* overflow-y: hidden; */
 }
 
@@ -97,7 +99,6 @@
   padding-left: 0;
   height: 150px;
   overflow-y: auto;
-  
 }
 
 .new-comments {

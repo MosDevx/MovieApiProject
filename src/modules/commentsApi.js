@@ -12,8 +12,7 @@ async function postComment({ showId, name, comment }) {
 
   });
 
-  const data = await response.json();
-  // console.log(data)
+  await response.json();
 }
 
 async function getComments(showID) {
@@ -31,13 +30,7 @@ async function getComments(showID) {
     // console.log('asd', e);
     // throw new Error('Comment doesnt exist');
   }
+  return [];
 }
 
-// try {
-//   getComments(102);
-// } catch (e) {
-//   console.log('asdasd', e);
-// }
 export { postComment, getComments };
-
-// postComment({showId:'101',name:'Aster',comment:'good show'})

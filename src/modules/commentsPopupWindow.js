@@ -1,5 +1,5 @@
 import countComments from './commentCounter.js';
-import { getComments, postComment } from './commentsApi.js';
+import { postComment } from './commentsApi.js';
 import getDate from './getDate.js';
 
 import validateComment from './validateComment.js';
@@ -7,6 +7,9 @@ import validateComment from './validateComment.js';
 const createLiComments = (comments) => {
   const fragment = document.createDocumentFragment();
 
+  if (comments.length === 0) {
+    return '';
+  }
   comments.reverse().forEach((comment) => {
     const li = document.createElement('li');
     li.textContent = `${comment.creation_date}: ${comment.username}--${comment.comment}`;
@@ -21,8 +24,6 @@ const createOneLiComment = (comment) => {
   li.textContent = `${getDate()}:${comment}`;
   return li;
 };
-
-const fakeComments = ['Good times', 'Awesome Show', 'Me likey', 'mucho gracis'];
 
 const popupWindow = ({
   showId, imgMediumUrl, imgAlt, name, season, episode, summary,
@@ -151,13 +152,11 @@ const popupWindow = ({
   // commentsForm attach EventListener
   commentsForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log('form submitted');
     const name = e.target.elements[0].value;
     const comment = e.target.elements[1].value;
     e.target.elements[0].value = '';
     e.target.elements[1].value = '';
     const data = validateComment(name, comment);
-    console.log('showID', showId);
     postComment({ showId, name, comment });
     const liComment = createOneLiComment(data);
     commentsUL.prepend(liComment);
