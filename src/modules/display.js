@@ -39,7 +39,7 @@ const showItems = (movie, likes, closeModal, popupContainer) => {
   likeBtn.dataset.showId = movie.showId;
 
   const like = document.createElement('i');
-  like.classList.add('fa-regular', 'fa-heart');
+  like.classList.add('fa-solid', 'fa-heart','red');
   likeBtn.append(like);
   likeIconDiv.append(likeBtn);
 

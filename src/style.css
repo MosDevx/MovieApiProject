@@ -32,7 +32,7 @@ body {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Magra', sans-serif;
+  font-family: 'Mukta Malar', sans-serif;
   font-size: 18px;
   letter-spacing: 1px;
   background-image: url(/src/assets/so-white.png);
@@ -71,7 +71,7 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
-  font-family: 'Metamorphous', cursive;
+  font-family: 'Tenor Sans', sans-serif;
 }
 
 p {
@@ -84,6 +84,16 @@ p {
 #root,
 #__next {
   isolation: isolate;
+}
+
+span{
+font-size:22px;
+}
+.page-title{
+  margin:auto;
+  text-align:center;
+  padding-top:50px;
+  font-size:50px;
 }
 
 .header {
@@ -229,4 +239,8 @@ footer {
   cursor: pointer;
   outline: inherit;
   font-size: 30px;
+}
+
+.red{
+  color:red;
 }
