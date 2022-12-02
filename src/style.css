@@ -1,4 +1,3 @@
-
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -146,4 +145,84 @@ footer {
   background-color: #204ecf;
   color: white;
   height:60px;
+}
+
+/* styling for movie cards */
+
+.main-section{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  margin:20px;
+  grid-gap:20px;
+  padding:20px;
+  margin-top: 90px;
+  margin-bottom: 90px;
+
+}
+
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  /* border:4px solid black; */
+  /* justify-content: space-between; */
+  width:300px;
+  height:433px;
+  align-items: center;
+  background-color: whitesmoke;
+  box-shadow:
+  1.7px 2.6px 2.8px rgba(0, 0, 0, 0.052),
+  4.6px 7px 7.8px rgba(0, 0, 0, 0.07),
+  11.1px 16.7px 18.7px rgba(0, 0, 0, 0.082),
+  37px 56px 62px rgba(0, 0, 0, 0.1)
+;
+}
+
+
+
+
+.movie-image-div{
+  display:flex;
+  justify-content:center;
+  width:100%;
+  height: 295px;
+  /* background-color:#77628e; */
+  background: rgb(115,147,200);
+  background: linear-gradient(90deg, rgba(115,147,200,1) 0%, rgba(33,64,171,1) 100%);
+  /* border-bottom: 1px solid rgb(207, 194, 194); */
+}
+
+.movie-image{
+  /* pass */
+}
+
+.card-description{
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  justify-content: space-around;
+  text-align:center;
+  align-items: center;
+  width:100%;
+  height:50%;
+}
+
+.like-div{
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  align-items: center;
+  width:50%;
+  
+  /* padding-right: 120px; */
+}
+.like-button{
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  font-size:30px;
 }
