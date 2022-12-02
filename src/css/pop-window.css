@@ -1,0 +1,189 @@
+
+/* Styling for the popup window */
+
+.popup-window1 {
+  display: none;
+  visibility: hidden;
+}
+
+.button-default {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.close-button {
+  position: absolute;
+  right: 0;
+  margin-right: 15px;
+  font-size: 45px;
+}
+
+.close-icon-fa {
+  color: rgb(255, 42, 0);
+}
+
+.popup-window {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  border: 5px solid black;
+
+  /* justify-content:space-evenly; */
+  align-items: center;
+  z-index: 10;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  text-align: center;
+  height: 700px;
+
+  /* height:max-content; */
+  background-image: url('/src/assets/dust_scratches.png');
+  overflow-y: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.popup-image {
+  width: auto;
+  height: 250px;
+}
+
+.title-div {
+  margin: 10px;
+  width: 350px;
+}
+
+.summary-div {
+  padding-right: 40px;
+  padding-left: 40px;
+  text-align: justify;
+}
+
+.display-comments {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  overflow-x: visible;
+  width: 450px;
+  padding-left: 5px;
+
+  /* overflow-y: hidden; */
+}
+
+.details-div {
+  display: flex;
+  width: 70%;
+  margin: auto;
+  color: blueviolet;
+  justify-content: space-between;
+}
+
+.comment-title {
+  display: flex;
+  justify-content: center;
+}
+
+.comments-ul {
+  border: 2px solid blue;
+  list-style-type: none;
+  text-align: left;
+  padding-left: 0;
+  height: 150px;
+  overflow-y: auto;
+}
+
+.new-comments {
+  width: 350px;
+}
+
+.comments-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 190px;
+}
+
+.comment-button {
+  margin-bottom: 10px;
+}
+
+/* CSS */
+.button-85 {
+  padding: 0.4em 1.7em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85::before {
+  content: "";
+  background:
+    linear-gradient(
+      45deg,
+      #f00,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #f00
+    );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85::after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
