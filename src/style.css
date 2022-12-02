@@ -153,7 +153,7 @@ footer {
 
 .main-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin: 20px;
   grid-gap: 20px;
   padding: 20px;
@@ -168,8 +168,9 @@ footer {
   /* border:4px solid black; */
 
   /* justify-content: space-between; */
+  padding-bottom:5px;
   width: 300px;
-  height: 433px;
+  height: 440px;
   align-items: center;
   background-color: whitesmoke;
   box-shadow:

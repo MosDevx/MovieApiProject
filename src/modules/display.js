@@ -1,10 +1,9 @@
 import { postLike } from './likesApi.js';
+import popupWindow from './commentsPopupWindow.js';
 
 //* Begining of function
 
-const showItems = ({
-  index, showId, name, imgMediumUrl,
-}, likes = 10) => {
+const showItems = (movie, likes, closeModal, popupContainer) => {
   let currentLikes = likes;
   //    main card body
   const itemDisplay = document.createElement('div');
@@ -14,8 +13,8 @@ const showItems = ({
   const movieCards = document.createElement('div');
   movieCards.classList.add('movie-image-div');
   const Img = document.createElement('img');
-  Img.setAttribute('src', imgMediumUrl);
-  Img.setAttribute('alt', `image of ${name}`);
+  Img.setAttribute('src', movie.imgMediumUrl);
+  Img.setAttribute('alt', `image of ${movie.name}`);
   // Img.setAttribute('class', 'movie-img');
   movieCards.append(Img);
 
@@ -26,7 +25,7 @@ const showItems = ({
   cardDescription.classList.add('card-description');
 
   const tvTitle = document.createElement('h3');
-  tvTitle.textContent = name;
+  tvTitle.textContent = movie.name;
   cardDescription.append(tvTitle);
 
   const likeIconDiv = document.createElement('div');
@@ -37,7 +36,7 @@ const showItems = ({
   likeBtn.classList.add('like-button');
   likeBtn.setAttribute('id', 'like-button');
 
-  likeBtn.dataset.showId = showId;
+  likeBtn.dataset.showId = movie.showId;
 
   const like = document.createElement('i');
   like.classList.add('fa-regular', 'fa-heart');
@@ -53,7 +52,7 @@ const showItems = ({
   likeBtn.addEventListener('click', () => {
     currentLikes += 1;
     likeCount.textContent = `${currentLikes}  likes`;
-    postLike(showId);
+    postLike(movie.showId);
   });
 
   cardDescription.appendChild(likeIconDiv);
@@ -62,8 +61,13 @@ const showItems = ({
   commentBtn.setAttribute('id', 'comment-button');
   // commentBtn.setAttribute('comment-button', `${data.id}`);
 
-  commentBtn.dataset.id = index;
+  commentBtn.dataset.id = movie.index;
   commentBtn.innerHTML = 'Comments';
+
+  commentBtn.addEventListener('click', () => {
+    const popup = popupWindow(movie,movie.index, closeModal);
+    popupContainer.append(popup);
+  });
   cardDescription.append(commentBtn);
 
   itemDisplay.appendChild(cardDescription);
