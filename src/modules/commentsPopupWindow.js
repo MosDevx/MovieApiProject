@@ -1,4 +1,6 @@
 import countComments from './commentCounter.js';
+import { getComments, postComment } from './commentsApi.js';
+import getDate from './getDate.js';
 
 import validateComment from './validateComment.js';
 
@@ -7,7 +9,7 @@ const createLiComments = (comments) => {
 
   comments.reverse().forEach((comment) => {
     const li = document.createElement('li');
-    li.textContent = comment;
+    li.textContent = `${comment.creation_date}: ${comment.username}--${comment.comment}`;
     fragment.append(li);
   });
 
@@ -16,15 +18,15 @@ const createLiComments = (comments) => {
 
 const createOneLiComment = (comment) => {
   const li = document.createElement('li');
-  li.textContent = comment;
+  li.textContent = `${getDate()}:${comment}`;
   return li;
 };
 
 const fakeComments = ['Good times', 'Awesome Show', 'Me likey', 'mucho gracis'];
 
 const popupWindow = ({
-  imgMediumUrl, imgAlt, name, season, episode, summary,
-}, closePopup) => {
+  showId, imgMediumUrl, imgAlt, name, season, episode, summary,
+}, commentsArray = [], closePopup) => {
   const mainDiv = document.createElement('div');
   mainDiv.classList.add('popup-window');
 
@@ -59,6 +61,9 @@ const popupWindow = ({
   const movieHeading = document.createElement('h3');
   movieHeading.textContent = name;
 
+  const episodeHeading = document.createElement('h5');
+  episodeHeading.textContent = episode;
+
   const detailsDiv = document.createElement('div');
   detailsDiv.classList.add('details-div');
 
@@ -70,10 +75,11 @@ const popupWindow = ({
 
   detailsDiv.append(seasonSpan, episodeSpan);
 
-  const summarySpan = document.createElement('span');
-  summarySpan.innerHTML = summary;
+  titleDiv.append(movieHeading, episodeHeading, detailsDiv);
 
-  titleDiv.append(movieHeading, detailsDiv, summarySpan);
+  const summaryDiv = document.createElement('div');
+  summaryDiv.innerHTML = summary;
+  summaryDiv.classList.add('summary-div');
   // end show descritption div
 
   // start display comments div
@@ -95,7 +101,9 @@ const popupWindow = ({
   commentsUL.classList.add('comments-ul');
 
   //* createLiComments will return a fragment containing list items of commenst
-  const comments = createLiComments(fakeComments);
+  // let commentsArray = []
+  // commentsArray = getComments(showId);
+  const comments = createLiComments(commentsArray);
   commentsUL.append(comments);
 
   const updateCommentCount = () => {
@@ -149,12 +157,14 @@ const popupWindow = ({
     e.target.elements[0].value = '';
     e.target.elements[1].value = '';
     const data = validateComment(name, comment);
+    console.log('showID', showId);
+    postComment({ showId, name, comment });
     const liComment = createOneLiComment(data);
     commentsUL.prepend(liComment);
     updateCommentCount();
   });
 
-  mainDiv.append(closeButton, imgDiv, titleDiv, displayCommentsDiv, newCommentsDiv);
+  mainDiv.append(closeButton, imgDiv, titleDiv, summaryDiv, displayCommentsDiv, newCommentsDiv);
   return mainDiv;
 };
 

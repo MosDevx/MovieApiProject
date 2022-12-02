@@ -21,7 +21,8 @@
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.0",
     "webpack-dev-server": "^4.11.1",
-    "workbox-webpack-plugin": "^6.5.4"
+    "workbox-webpack-plugin": "^6.5.4",
+    "worker-loader": "^3.0.8"
   },
   "version": "1.0.0",
   "description": "My webpack project",
@@ -36,6 +37,7 @@
   },
   "dependencies": {
     "jest": "^29.3.1",
-    "jest-environment-jsdom": "^29.3.1"
+    "jest-environment-jsdom": "^29.3.1",
+    "node-vibrant": "^3.2.1-alpha.1"
   }
 }
