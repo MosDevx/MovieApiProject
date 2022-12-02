@@ -126,7 +126,7 @@ You can deploy this project using:
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://mosdevx.github.io/MovieApiProject)
+- [Live Demo Link](https://mosdevx.github.io/MovieApiProject/index.html)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
