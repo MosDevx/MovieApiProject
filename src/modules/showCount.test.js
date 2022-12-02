@@ -1,4 +1,4 @@
-import countItems from '../modules/showmMovieCount.js';
+import countItems from './showmMovieCount.js';
 
 describe('Test To Count Number of Items in  A Dom Element', () => {
   test('countItems', () => {
