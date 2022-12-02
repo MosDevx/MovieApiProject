@@ -42,6 +42,11 @@ const config = {
         options: { /* ... */ },
       },
       {
+        test: /\.worker.js$/,
+        loader: 'worker-loader',
+        options: { /* ... */ },
+      },
+      {
         test: /\.css$/i,
         use: [stylesHandler, 'css-loader'],
       },

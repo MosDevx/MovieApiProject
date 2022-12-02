@@ -58,7 +58,7 @@ After you're finished please remove all the comments and instructions!
 
 > This project is application project about movie description user of application can like and leave comments
 
-**[Movie Api]** is a javascript project
+**[Movie Api]** is a javascript project that fetches TV Show Data from an API
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -81,7 +81,6 @@ After you're finished please remove all the comments and instructions!
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
@@ -96,24 +95,23 @@ npm
 
 Clone this repository to your desired folder:
 
-``` git clone https://github.com/MosDevx/MovieApiProject.git```
+` git clone https://github.com/MosDevx/MovieApiProject.git`
 
 ### Install
 
 Install this project with:
 
-``` npm install ```
+`npm install`
 
 ### Usage
 
 To run the project, execute the following command:
 
-```npm run serve ```
+`npm run serve `
 
 ### Run tests
 
 To run tests, run the following command:
-
 
 ```
 npm run test
@@ -122,7 +120,13 @@ npm run test
 ### Deployment
 
 You can deploy this project using:
-```npm run serve```
+`npm run serve`
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://mosdevx.github.io/MovieApiProject)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -138,14 +142,11 @@ You can deploy this project using:
 - Twitter: [@moseswamae7](https://twitter.com/moseswamae7)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/moses-wamae-a13a67244)
 
-
 👤 **Aster Alemu**
 
 - GitHub: [@aster-alemu](https://github.com/aster-alemu)
 - Twitter: [@aster_alemu](https://twitter.com/aster_alemu)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/asteralemu)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -170,8 +171,6 @@ If you like this project please star it ⭐️
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 We would like to thank Microverse
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
