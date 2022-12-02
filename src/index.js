@@ -1,48 +1,73 @@
 // import getLikes from './modules/involvment.js'
-import showItems from './modules/display.js'
+import showItems from './modules/display.js';
 import getMovies from './modules/getMovies.js';
+import { getLikes } from './modules/likesApi.js';
 
 import './style.css';
 
-const mainSection = document.getElementById('main-section')
+const mainSection = document.getElementById('main-section');
 
+const movieArray = await getMovies();
 
-const movieArray = await getMovies()
+const allLikes = await getLikes();
 
-movieArray.forEach((movie)=>{
-	let card = showItems(movie,5)
-	mainSection.append(card)
-})
+// function
 
+const allIdsArray = [];
+movieArray.forEach((movie) => {
+  allIdsArray.push(movie.showId);
+});
 
+const findLikes = (id) => {
+  const result = allLikes.find((like) => like.item_id === id);
+  return result?.likes ?? 0;
+};
 
-// movieArray.forEach((movie)=>{
-// 	console.log( movie.showId)
-// })
+movieArray.forEach((movie) => {
+  const likes = findLikes(movie.showId);
+  const card = showItems(movie, likes);
+  mainSection.append(card);
+});
 
+// //! My Own index js
+// import './style.css';
+// // import './css/pop-window.css'
 
-let card = showItems({index:10,name:"Show Name",imgMediumUrl:"/src/assets/logo-pop.png",likes:10 })
+// import popupWindow from './modules/commentsPopupWindow.js';
+// import getMovies from './modules/getMovies.js';
+// import {
+//   getComments,
 
+// } from './modules/commentsApi.js';
 
-// mainSection.append(card)
-// mainSection.append(card2)
-// mainSection.append(card3)
-// mainSection.append(card4)
-// mainSection.append(card5
-// mainSection.append(card6)
+// const popupContainer = document.getElementById('popup-container');
 
+// const movieArray = await getMovies();
 
-// let likes = getLikes()
+// const allIdsArray = [];
+// movieArray.forEach((movie) => {
+//   allIdsArray.push(movie.showId);
+// });
 
-// console.log(likes)
-// console.log("index js called")
+// async function getAllComments(showIdsArray) {
+//   const allCommentsArray = [];
 
-// (async () => {
-//     try {
-//         let likes = await getLikes()
-//         console.log(likes)
-//     } catch (err) {
-//       // pass
-//     }
+//   let allArray = [];
+//   for (let index = 0; index < showIdsArray.length; index += 1) {
+//     const comment = getComments(showIdsArray[index]);
+//     allCommentsArray.push(comment);
 //   }
-//   )();
+//   allArray = await Promise.all(allCommentsArray);
+
+//   return allArray;
+// }
+
+// const commentsArray = await getAllComments(allIdsArray);
+
+// function closeModal() {
+//   popupContainer.innerHTML = '';
+// }
+
+// const popup = popupWindow(movieArray[2], commentsArray[2], closeModal);
+
+// popupContainer.append(popup);
