@@ -9,11 +9,6 @@ import validateComment from './validateComment.js';
 
 
 
-
-
-
-
-
 const createLiComments = (comments) => {
   const fragment = document.createDocumentFragment();
 
