@@ -58,7 +58,7 @@ After you're finished please remove all the comments and instructions!
 
 > This project is application project about movie description user of application can like and leave comments
 
-**[Movie Api]** is a javascript project
+**[Movie Api]** is a javascript project that fetches TV Show Data from an API
 
 ## 🛠 Built With <a name="built-with"></a>
 
