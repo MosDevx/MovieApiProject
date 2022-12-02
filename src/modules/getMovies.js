@@ -1,4 +1,4 @@
-const movieUrl = 'https://api.tvmaze.com/schedule/web?date=2020-05-22&country=US';
+const movieUrl = 'https://api.tvmaze.com/schedule/web?date=2020-05-21&country=US';
 
 function parseMovieData(dataArray) {
   const parsedArray = [];

@@ -5,6 +5,9 @@ import getDate from './getDate.js';
 
 import { commentsArray } from './initializer.js';
 
+
+console.log('commentsArray',commentsArray);
+
 import validateComment from './validateComment.js';
 
 
@@ -173,7 +176,8 @@ const popupWindow = ({
     e.target.elements[0].value = '';
     e.target.elements[1].value = '';
 
-    commentsArray[index].push({"creation_date":getDate(),"user_name":name,"comment":comment})
+    commentsArray[index].push({"creation_date":getDate(),"username":name,"comment":comment})
+    console.log('sumbit',commentsArray[index]);
     const data = validateComment(name, comment);
 
     postComment({ showId, name, comment });
