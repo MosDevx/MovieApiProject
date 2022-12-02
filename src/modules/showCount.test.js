@@ -1,17 +1,29 @@
-import showsNumber from './showsCount.js';
+import countItems from '../modules/showmMovieCount.js';
 
-describe('showCounter', () => {
-  test('result should be equal to 5', () => {
-    const list = [{ name: 'levy' }, { name: 'gg' }, { name: 'oo' }, { name: 'tt' }, { name: 'ww' }];
-    const result = showsNumber(list);
+describe('Test To Count Number of Comments in  A Dom Element', () => {
+  test('countItems', () => {
+    document.body.innerHTML = `
+    <ul class id="item-container">
+      <li>One item</li>
+      <li>Two item</li>
 
-    expect(result).toBe(5);
+    </ul>
+    `;
+
+    const itemContainer = document.getElementById('items-container');
+    expect(countItems(itemContainer)).toBe(2);
   });
 
-  test('result should be equal to 0', () => {
-    const list = [];
-    const result = showsNumber(list);
+  test('countItems', () => {
+    document.body.innerHTML = `
+    <ul class id="item-container">
+      <li>One item</li>
+      <li>Two item</li>
 
-    expect(result).toBe(0);
+    </ul>
+    `;
+
+    const itemContainer = document.getElementById('item-container');
+    expect(countItems(itemContainer)).toBe(2);
   });
 });
