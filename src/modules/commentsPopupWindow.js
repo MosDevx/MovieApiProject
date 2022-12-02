@@ -1,8 +1,18 @@
 import countComments from './commentCounter.js';
 import { postComment } from './commentsApi.js';
 import getDate from './getDate.js';
+// import { getComments } from './commentsApi.js';
+
+import { commentsArray } from './initializer.js';
 
 import validateComment from './validateComment.js';
+
+
+
+
+
+
+
 
 const createLiComments = (comments) => {
   const fragment = document.createDocumentFragment();
@@ -26,10 +36,16 @@ const createOneLiComment = (comment) => {
 };
 
 const popupWindow = ({
-  showId, imgMediumUrl, imgAlt, name, season, episode, summary,
-}, commentsArray = [], closePopup) => {
+  showId, imgMediumUrl, imgAlt, name, episodeName,season, episode, summary,
+}, index, closePopup) => {
+  
+  let localCommentsArray = []
+  localCommentsArray.push(...commentsArray);
+  
   const mainDiv = document.createElement('div');
   mainDiv.classList.add('popup-window');
+
+
 
   // start close button
 
@@ -63,7 +79,7 @@ const popupWindow = ({
   movieHeading.textContent = name;
 
   const episodeHeading = document.createElement('h5');
-  episodeHeading.textContent = episode;
+  episodeHeading.textContent = episodeName;
 
   const detailsDiv = document.createElement('div');
   detailsDiv.classList.add('details-div');
@@ -103,7 +119,8 @@ const popupWindow = ({
 
   //* createLiComments will return a fragment containing list items of commenst
 
-  const comments = createLiComments(commentsArray);
+  const comments = createLiComments(commentsArray[index]);
+  
   commentsUL.append(comments);
 
   const updateCommentCount = () => {
@@ -155,7 +172,10 @@ const popupWindow = ({
     const comment = e.target.elements[1].value;
     e.target.elements[0].value = '';
     e.target.elements[1].value = '';
+
+    commentsArray[index].push({"creation_date":getDate(),"user_name":name,"comment":comment})
     const data = validateComment(name, comment);
+
     postComment({ showId, name, comment });
     const liComment = createOneLiComment(data);
     commentsUL.prepend(liComment);
@@ -163,6 +183,8 @@ const popupWindow = ({
   });
 
   mainDiv.append(closeButton, imgDiv, titleDiv, summaryDiv, displayCommentsDiv, newCommentsDiv);
+
+  
   return mainDiv;
 };
 
