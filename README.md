@@ -69,6 +69,10 @@ We built the application following the requirements from the github projects [`K
 
 You can find a video description of our project [here](https://drive.google.com/file/d/1lYn5ZpMWCQuchWO3vlzZeCiH40EyJXUX/view?usp=sharing)👈😁
 
+## PULL REQUESTS
+- [pull request](https://github.com/MosDevx/MovieApiProject/pull/24)
+- [pull request-2](https://github.com/MosDevx/MovieApiProject/pull/23)
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
