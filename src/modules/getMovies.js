@@ -7,7 +7,7 @@ function parseMovieData(dataArray) {
     // console.log(movie);
     const {
       id, name, season, number,
-      _embedded: { show: { name: showName, image: { medium, original }, summary } },
+      _embedded: { show: { name: showName, image: { medium }, summary } },
     } = movie;
 
     const show = {
@@ -18,7 +18,7 @@ function parseMovieData(dataArray) {
       season,
       episode: number,
       imgMediumUrl: medium,
-      imgOriginal: original,
+     
       summary,
     };
 

@@ -36,6 +36,7 @@ After you're finished please remove all the comments and instructions!
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
+- [🎦 Video Description](#video) 
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
@@ -56,9 +57,17 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 [Movie Api] <a name="about-project"></a>
 
-> This project is application project about movie description user of application can like and leave comments
+
+
+
+
 
 **[Movie Api]** is a javascript project that fetches TV Show Data from an API
+## Video description <a name="video"></a>
+> This project is application project about movie description user of application can like and leave comments
+We built the application following the requirements from the github projects [`Kanban board`](https://github.com/users/MosDevx/projects/7/views/1), which we enjoyed using.😍
+
+You can find a video description of our project [here](https://drive.google.com/file/d/1UUzzP7FXdpw9hNdlCKP4KoaxuJm-YXyh/view?usp=sharing)👈😁
 
 ## 🛠 Built With <a name="built-with"></a>
 
