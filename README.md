@@ -69,6 +69,11 @@ We built the application following the requirements from the github projects [`K
 
 You can find a video description of our project [here](https://drive.google.com/file/d/1lYn5ZpMWCQuchWO3vlzZeCiH40EyJXUX/view?usp=sharing)👈😁
 
+
+## Personal Video Presentation
+### Moses Wamae
+You can find a video my presentation [here](https://drive.google.com/file/d/1Ax5mLa1h2oKnx2htQNJk7Z84JtcHSVHE/view?usp=sharing)👈😁
+
 ## PULL REQUESTS
 - [pull request](https://github.com/MosDevx/MovieApiProject/pull/24)
 - [pull request-2](https://github.com/MosDevx/MovieApiProject/pull/23)
