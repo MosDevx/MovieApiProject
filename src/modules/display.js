@@ -39,7 +39,7 @@ const showItems = (movie, likes, closeModal, popupContainer) => {
   likeBtn.dataset.showId = movie.showId;
 
   const like = document.createElement('i');
-  like.classList.add('fa-solid', 'fa-heart','red');
+  like.classList.add('fa-solid', 'fa-heart', 'red');
   likeBtn.append(like);
   likeIconDiv.append(likeBtn);
 
@@ -65,7 +65,7 @@ const showItems = (movie, likes, closeModal, popupContainer) => {
   commentBtn.innerHTML = 'Comments';
 
   commentBtn.addEventListener('click', () => {
-    const popup = popupWindow(movie,movie.index, closeModal);
+    const popup = popupWindow(movie, movie.index, closeModal);
     popupContainer.append(popup);
   });
   cardDescription.append(commentBtn);

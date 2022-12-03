@@ -88,14 +88,15 @@ p {
   isolation: isolate;
 }
 
-span{
-font-size:22px;
+span {
+  font-size: 22px;
 }
-.page-title{
-  margin:auto;
-  text-align:center;
-  padding-top:50px;
-  font-size:50px;
+
+.page-title {
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+  font-size: 50px;
 }
 
 .header {
@@ -180,7 +181,7 @@ footer {
   /* border:4px solid black; */
 
   /* justify-content: space-between; */
-  padding-bottom:5px;
+  padding-bottom: 5px;
   width: 300px;
   height: 440px;
   align-items: center;
@@ -243,6 +244,6 @@ footer {
   font-size: 30px;
 }
 
-.red{
-  color:red;
+.red {
+  color: red;
 }

@@ -7,8 +7,6 @@ import { commentsArray } from './initializer.js';
 
 import validateComment from './validateComment.js';
 
-
-
 const createLiComments = (comments) => {
   const fragment = document.createDocumentFragment();
 
@@ -31,16 +29,13 @@ const createOneLiComment = (comment) => {
 };
 
 const popupWindow = ({
-  showId, imgMediumUrl, imgAlt, name, episodeName,season, episode, summary,
+  showId, imgMediumUrl, imgAlt, name, episodeName, season, episode, summary,
 }, index, closePopup) => {
-  
-  let localCommentsArray = []
+  const localCommentsArray = [];
   localCommentsArray.push(...commentsArray);
-  
+
   const mainDiv = document.createElement('div');
   mainDiv.classList.add('popup-window');
-
-
 
   // start close button
 
@@ -115,7 +110,7 @@ const popupWindow = ({
   //* createLiComments will return a fragment containing list items of commenst
 
   const comments = createLiComments(commentsArray[index]);
-  
+
   commentsUL.append(comments);
 
   const updateCommentCount = () => {
@@ -168,7 +163,7 @@ const popupWindow = ({
     e.target.elements[0].value = '';
     e.target.elements[1].value = '';
 
-    commentsArray[index].push({"creation_date":getDate(),"user_name":name,"comment":comment})
+    commentsArray[index].push({ creation_date: getDate(), user_name: name, comment });
     const data = validateComment(name, comment);
 
     postComment({ showId, name, comment });
@@ -179,7 +174,6 @@ const popupWindow = ({
 
   mainDiv.append(closeButton, imgDiv, titleDiv, summaryDiv, displayCommentsDiv, newCommentsDiv);
 
-  
   return mainDiv;
 };
 
