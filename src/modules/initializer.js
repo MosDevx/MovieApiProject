@@ -13,7 +13,6 @@ movieArray.forEach((movie) => {
   allIdsArray.push(movie.showId);
 });
 
-
 async function getAllComments(showIdsArray) {
   const allCommentsArray = [];
 
@@ -32,8 +31,6 @@ const findLikes = (id) => {
   return result?.likes ?? 0;
 };
 
-
 const commentsArray = await getAllComments(allIdsArray);
 
-
-export {movieArray,findLikes,commentsArray}
+export { movieArray, findLikes, commentsArray };

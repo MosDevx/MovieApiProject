@@ -13,8 +13,7 @@ async function postLike(showId) {
   await response.json();
 }
 
-
-//get the total of likes from the API
+// get the total of likes from the API
 async function getLikes() {
   const response = await fetch(involveUrl);
 

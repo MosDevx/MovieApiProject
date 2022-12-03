@@ -2,8 +2,6 @@ const cataloguePage = document.getElementById('catalogue-section');
 const ticketPage = document.getElementById('ticket-section');
 const mainPage = document.getElementById('main-page');
 
-console.log('mainPage', ticketPage);
-
 function showcataloguePage() {
   ticketPage.classList.add('hide');
   mainPage.classList.add('hide');
@@ -26,7 +24,6 @@ export default function spaNavigation() {
   window.addEventListener('hashchange', () => {
     const { hash } = window.location;
     if (hash === '#catalogue-section') {
-      
       showcataloguePage();
     } else if (hash === '#ticket-section') {
       showticketPage();

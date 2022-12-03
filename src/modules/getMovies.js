@@ -18,7 +18,7 @@ function parseMovieData(dataArray) {
       season,
       episode: number,
       imgMediumUrl: medium,
-     
+
       summary,
     };
 
