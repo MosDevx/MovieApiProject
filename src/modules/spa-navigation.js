@@ -1,6 +1,6 @@
 const cataloguePage = document.getElementById('catalogue-section');
 const ticketPage = document.getElementById('ticket-section');
-const mainPage = document.getElementById('main-section');
+const mainPage = document.getElementById('main-page');
 
 console.log('mainPage', ticketPage);
 
@@ -26,11 +26,11 @@ export default function spaNavigation() {
   window.addEventListener('hashchange', () => {
     const { hash } = window.location;
     if (hash === '#catalogue-section') {
-      console.log("page change")
+      
       showcataloguePage();
     } else if (hash === '#ticket-section') {
       showticketPage();
-    } else if (hash === '#main-section') {
+    } else if (hash === '#main-page') {
       showmainPage();
     } else if (hash === '') {
       showcataloguePage();

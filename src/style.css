@@ -42,6 +42,7 @@ body {
 
 .hide{
   display:none;
+  visibility: hidden;
 }
 /*
   6. Improve media defaults
@@ -93,6 +94,7 @@ p {
 span{
 font-size:22px;
 }
+
 .page-title{
   margin:auto;
   text-align:center;
