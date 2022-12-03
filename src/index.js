@@ -1,6 +1,7 @@
 // import getLikes from './modules/involvment.js'
 import showItems from './modules/display.js';
 import {movieArray,findLikes} from './modules/initializer.js'
+import spaNavigation from './modules/spa-navigation.js';
 
 import './style.css';
 
@@ -18,3 +19,5 @@ movieArray.forEach((movie, index) => {
   const card = showItems(movie, likes, closeModal,popupContainer);
   mainSection.append(card);
 });
+
+spaNavigation()
