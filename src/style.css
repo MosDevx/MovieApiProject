@@ -1,0 +1,267 @@
+@import url('./css/pop-window.css');
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Mukta Malar', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  background-image: url(/src/assets/so-white.png);
+  /* background: linear-gradient(to right, rgb(196, 181, 253), rgb(167, 139, 250)); */
+  padding-bottom: 60px;
+}
+
+.hide {
+  display: none;
+  visibility: hidden;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  font-family: 'Tenor Sans', sans-serif;
+}
+
+p {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+span {
+  font-size: 22px;
+}
+
+.page-title {
+  margin: auto;
+  text-align: center;
+  padding-top: 40px;
+  font-size: 32px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #204ecf;
+  padding: 10px ;
+}
+
+.logo-div {
+  display: flex;
+  align-items: center;
+  /* color: black; */
+  font-size: 34px;
+  border: 2px;
+  /* background-color: rgb(255, 0, 174); */
+  background: linear-gradient(to right, rgb(217, 70, 239), rgb(220, 38, 38), rgb(251, 146, 60));
+
+  padding:1px 10px ;
+  border-radius: 4px;
+
+}
+.logo-div span{
+  color:rgb(0, 0, 0);
+  font-weight: bold;
+  font-size:26px;
+}
+.movie-icon {
+  width: 100px;
+}
+
+.nav-link {
+  width: 640px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 22px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+  font-weight: normal;
+}
+
+.footer-logo-div {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 25px;
+}
+
+.footer-icon {
+  width: 70px;
+  height: auto;
+}
+
+footer {
+  width: 100%;
+  /* position: fixed; */
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #204ecf;
+  color: white;
+  height: 60px;
+}
+
+/* styling for movie cards */
+
+.main-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 20px;
+  grid-gap: 20px;
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 90px;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+
+  /* border:2px solid black; */
+
+  /* justify-content: space-between; */
+  padding-bottom: 5px;
+  width: 300px;
+  height: 440px;
+  align-items: center;
+  background-color: whitesmoke;
+  box-shadow:
+    1.7px 2.6px 2.8px rgba(0, 0, 0, 0.052),
+    4.6px 7px 7.8px rgba(0, 0, 0, 0.07),
+    11.1px 16.7px 18.7px rgba(0, 0, 0, 0.082),
+    37px 56px 62px rgba(0, 0, 0, 0.1);
+}
+
+.movie-image-div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 295px;
+  border-radius: 20px;
+
+  /* background-color:#77628e; */
+  /* background: rgb(115, 147, 200); */
+  background: linear-gradient(to right, rgb(217, 70, 239), rgb(220, 38, 38), rgb(251, 146, 60));
+
+  /* border-bottom: 1px solid rgb(207, 194, 194); */
+}
+
+.movie-image {
+  /* pass */
+}
+
+.card-description {
+  display: flex;
+  flex-direction: column;
+
+  /* flex-wrap: wrap; */
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+}
+
+.like-div {
+  display: flex;
+
+  /* flex-direction: column; */
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+
+  /* padding-right: 120px; */
+}
+
+.like-button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 30px;
+}
+
+.red {
+  color: red;
+}
